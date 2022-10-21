@@ -232,7 +232,8 @@ func main() {
 			} else if answer[i] == 'w' {
 				presentLetters = append(presentLetters, bestWord[i])
 			} else if answer[i] == 'g' {
-				if !strings.Contains(string(mask[:]), string(bestWord[i])) {
+				if !strings.Contains(string(mask[:]), string(bestWord[i])) &&
+					!strings.Contains(string(presentLetters), string(bestWord[i])) {
 					blockedLetters = append(blockedLetters, bestWord[i])
 				} else {
 					// What here?
